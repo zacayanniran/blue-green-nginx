@@ -3,7 +3,7 @@ version: '3.8'
 services:
   blue:
     image: ${BLUE_IMAGE}
-    container_name: app-blue
+    container_name: app-blue:v10
     environment:
       - RELEASE_ID=${RELEASE_ID_BLUE}
     ports:
@@ -18,7 +18,7 @@ services:
 
   green:
     image: ${GREEN_IMAGE}
-    container_name: app-green
+    container_name: app-green:v10
     environment:
       - RELEASE_ID=${RELEASE_ID_GREEN}
     ports:
@@ -33,7 +33,7 @@ services:
 
   nginx:
     image: nginx:alpine
-    container_name: nginx-reverseproxy
+    container_name: nginx-reverseproxy:10
     ports:
       - "${PORT:-8080}:80"
     volumes:
